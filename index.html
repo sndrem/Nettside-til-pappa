@@ -12,6 +12,9 @@
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
 
+    <!-- Font awesome css -->
+    <link rel="stylesheet" href="fa/css/font-awesome.min.css">
+
     <!-- Custom styles -->
     <link rel="stylesheet" href="style.css"/>
 
@@ -44,11 +47,13 @@
         <li><a href="#">Sortiment og priser</a></li>
         <li><a href="#">Galleri</a></li>
         <li><a href="#">Om oss</a></li>
-        <li><a href="#">Kontakt oss</a></li>
+        <li><a href="#" data-toggle="modal" data-target="#contactModal">Kontakt oss</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->	
   </div><!-- /.container -->
 </nav> <!-- Slutt på navbaren -->
+
+
 
 <div class="container main-content">
 	<div class="row">
@@ -67,46 +72,58 @@
 	</div> <!-- Slutt på første row -->
 </div>
 
-<div class="container">
-<div class="row">
-			<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-				<a href="#" class="thumbnail">
-					<img src="Images/instagram.jpg" alt="">
-					<div class="caption">
-						<h3>Flott bord til utebruk</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem est aperiam atque ipsum distinctio, consequatur fuga, impedit, ipsa et, perferendis nostrum esse ratione perspiciatis. Ab adipisci fugiat corrupti harum laboriosam.</p>
+	<div class="container"> <!-- Thumbnails på forsiden -->
+		<div class="row">
+					<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+						<a href="#" class="thumbnail">
+							<img src="http://placehold.it/350x150" alt="">
+							<div class="caption">
+								<h3>Flott bord til utebruk</h3>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem est aperiam atque ipsum distinctio, consequatur fuga, impedit, ipsa et, perferendis nostrum esse ratione perspiciatis. Ab adipisci fugiat corrupti harum laboriosam.</p>
+							</div>
+						</a>
 					</div>
-				</a>
-			</div>
-			<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-				<a href="#" class="thumbnail">
-					<img src="Images/rottervold.jpg" alt="">
-					<div class="caption">
-					<h3>Modell Røttervold</h3>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt, repellat veniam atque eum ex at doloribus accusantium, officia ea debitis, aliquid itaque vero maxime! Maxime doloremque voluptate dolorem expedita vero.</p>
+					<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+						<a href="#" class="thumbnail">
+							<img src="http://placehold.it/350x150" alt="">
+							<div class="caption">
+							<h3>Modell Røttervold</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt, repellat veniam atque eum ex at doloribus accusantium, officia ea debitis, aliquid itaque vero maxime! Maxime doloremque voluptate dolorem expedita vero.</p>
+							</div>
+						</a>
 					</div>
-				</a>
-			</div>
-			<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-				<a href="#" class="thumbnail">
-					<img src="Images/hafjell.jpg" alt="">
-					<div class="caption">
-						<h3>Modell Hafjell</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus dolores officiis perferendis tenetur, pariatur assumenda corrupti magni. Tempore aut ratione dicta maxime earum corporis repellat, eius, reprehenderit assumenda tempora minus?</p>
+					<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+						<a href="#" class="thumbnail">
+							<img src="http://placehold.it/350x150" alt="">
+							<div class="caption">
+								<h3>Modell Hafjell</h3>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus dolores officiis perferendis tenetur, pariatur assumenda corrupti magni. Tempore aut ratione dicta maxime earum corporis repellat, eius?</p>
+							</div>
+						</a>
 					</div>
-				</a>
-			</div>
-			<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-				<a href="#" class="thumbnail">
-					<img src="Images/utebord.jpg" alt="">
-					<div class="caption">
-						<h3>Modell Utebord</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni doloremque, atque obcaecati, rem dolorem praesentium laudantium voluptas eveniet repudiandae at sed deserunt! Quo mollitia minima, explicabo, nisi suscipit error odio.</p>
+					<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+						<a href="#" class="thumbnail">
+							<img src="http://placehold.it/350x150" alt="">
+							<div class="caption">
+								<h3>Modell Utebord</h3>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni doloremque, atque obcaecati, rem dolorem praesentium laudantium voluptas eveniet repudiandae at sed deserunt! Quo mollitia minima, explicabo, nisi suscipit error odio.</p>
+							</div>
+						</a>
 					</div>
-				</a>
-			</div>
-		</div>
-	</div>
+				</div>
+	</div> <!-- Slutt på thumbnails -->
+
+	<!-- Footer -->
+	<div class="navbar navbar-default navbar-fixed-bottom">
+  <div class="container">
+    <span class="navbar-text">
+      <p><i class="fa fa-copyright"></i> Per Atle Moldeklev, 2014</p>
+    </span>
+    <span class="navbar-text pull-right">
+    	<p>Denne nettsiden er laget av <a href="http://sndrem.github.io" target="_blank">Sindre Moldeklev</a></p>
+    </span>
+  </div>
+</div>
     
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -115,4 +132,16 @@
     <!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
   </body>
+
+	<!-- Contact form modal -->
+	<div class="modal fade" id="contactModal" tabindex="-1" role="dialog">
+		
+		<div class="modal-dialog">
+			<div class="modal-content">
+				
+			</div>
+		</div>
+
+	</div> <!-- Slutt på moda -->
+
 </html>
