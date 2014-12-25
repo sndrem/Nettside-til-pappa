@@ -64,7 +64,7 @@
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore natus, nemo tempora quas soluta inventore cum provident iusto, perspiciatis ipsum magnam atque minima. Unde tempore, repellendus dolorem fuga vel consequuntur.</p>
 
 					<p>
-						<a class="btn btn-success btn-lg pull-right">Kjøp et bord</a>
+						<a class="btn btn-success btn-lg pull-right" data-toggle="modal" data-target="#kjopeModal">Kjøp et bord</a>
 					</p>
 				</div>
 			</div>
@@ -157,10 +157,23 @@
 							<textarea class="form-control" rows="5" id="comment"></textarea>
 						</div>
 					
-						
-					
-						<button type="submit" class="btn btn-primary">Submit</button>
+						<button type="submit" class="btn btn-primary">Send melding</button>
+						<button type="close" class="btn btn-default" data-dismiss="modal">Lukk</button>
 					</form>
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+
+	<!-- Modal for kjøpeknappen -->
+	<div class="modal fade" id="kjopeModal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title">Kjøp av bord</h4>
+				</div>
+				<div class="modal-body">
 					
 				</div>
 				<div class="modal-footer">
