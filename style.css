@@ -1,5 +1,4 @@
 body {
-  margin-bottom: 140px;
   background-image: url(Images/woodWood.jpg); }
 
 .main-content {
@@ -7,5 +6,13 @@ body {
 
 .navbar-fixed-bottom .container .navbar-text {
   color: black; }
+
+.footer {
+  margin-bottom: 0px; }
+  .footer .container {
+    margin-bottom: 0px; }
+
+#productCarousel {
+  margin-bottom: 15px; }
 
 /*# sourceMappingURL=style.css.map */

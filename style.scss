@@ -1,5 +1,5 @@
 body {
-    margin-bottom: 140px;
+   	//margin-bottom: 50px;
     background-image: url(Images/woodWood.jpg);
 
 }
@@ -14,4 +14,16 @@ body {
 			color: black;
 		}
 	}
+}
+
+.footer {
+	margin-bottom: 0px;
+
+	.container{
+		margin-bottom: 0px;
+	}
+}
+
+#productCarousel {
+	margin-bottom: 15px;
 }
