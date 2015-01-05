@@ -290,16 +290,36 @@
                               <div class="modal-body">
                                 
                                 <p>Ønsker du å kjøpe et bord eller bare har spørsmål? Ikke nøl med å sende meg en mail.</p>
-                                <label for="">Fullt navn</label>
+                                <label for="name">Fullt navn</label>
                                 <input type="text" class="form-control" id="" placeholder="Fornavn Etternavn">
-                                <label for="">Adresse</label>
+                                <label for="adress">Adresse</label>
                                 <input type="text" class="form-control" id="" placeholder="Din adresse her">
-                                <label for="">Telefon</label>
+                                <label for="phone">Telefon</label>
                                 <input type="text" class="form-control" id="" placeholder="telefon">
-                                <label for="">Email</label>
+                                <label for="email">Email</label>
                                 <input type="text" class="form-control" id="" placeholder="example@hostname.no">
-                                <label for="">Melding</label>
-                                <textarea class="form-control" rows="5" id="comment"></textarea>
+                                <div class="choice">
+                                 
+                                      <label for="bordplate">Velg hvilken finish du ønsker på bordplaten</label>
+                                      <select class="select form-control" name="finish" id="bordfinish">
+                                        <option class="option form-control" value="teak">Teak</option>
+                                        <option class="option form-control" value="gran">Gran</option>
+                                        <option class="option form-control" value="value">Furu</option>
+                                        <option class="option form-control" value="masai">Masai</option>
+                                      </select> <br> 
+                                   
+                                      <label for="bein">Velg hvilke bein du ønsker</label>
+                                      <select class="select form-control" name="finish" id="bein">
+                                      <option class="option form-control" value="rør">Rør</option>
+                                      <option class="option form-control" value="tre">Tre</option>
+                                      </select> <br> 
+
+                                      <label for="leveringstid">Velg ønsket leveringstid.</label>
+                                      <input type="date" class="form-control" name="leveringsdato">
+                                   
+                                </div>  
+                                <label for="message">Melding</label>
+                                <textarea class="form-control" rows="5" id="comment" placeholder="Har du spørsmål eller kommentarer til leveransen? Send med en melding her."></textarea>
                               </div>
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-default" data-dismiss="modal">Lukk</button>

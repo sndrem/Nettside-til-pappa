@@ -8,4 +8,26 @@ body {
 .navbar-fixed-bottom .container .navbar-text {
   color: black; }
 
+/*
+.choice {
+	margin-top: 5px;
+	margin-bottom: 5px;
+	border: solid #ccc 1px;
+	border-radius: 5px;
+
+	p{
+		color: #333;
+		margin-left: 5px;
+		margin-bottom: 3px;
+		font-weight: 700;
+	}
+
+	.select{
+		margin-left: 5px;
+		margin-bottom: 3px;
+	}
+
+}
+*/
+
 /*# sourceMappingURL=style.css.map */
