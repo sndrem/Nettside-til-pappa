@@ -12,34 +12,49 @@ $(document).ready(function(){
 
 function validateForm(){
 	var form = document.kjopeForm;
+	var status = false;
+
+	if(!status){
 	
-	if(form.fullName.value === ""){
-		$("#fullName").attr('placeholder', 'Vennligst fyll inn fullt navn');
-	}
+		if(form.fullName.value === ""){
+			$("#fullName").attr('placeholder', 'Vennligst fyll inn fullt navn');
+			status = false;
+		}
 
-	if(form.adress.value === ""){
-		$("#adress").attr('placeholder', "Vennligst fyll inn full adresse");
-	}
+		if(form.adress.value === ""){
+			$("#adress").attr('placeholder', "Vennligst fyll inn full adresse");
+			status = false;
+		}
 
-	if(form.phone.value.length !== 8){
-		$("#phone").attr('placeholder', "Vennligst fyll inn et gyldig telefonnummer med 8 siffer");
-	}
+		if(form.phone.value.length !== 8){
+			$("#phone").attr('placeholder', "Vennligst fyll inn et gyldig telefonnummer med 8 siffer");
+			status = false;
+		}
 
-	if(!validateEmail(form.email.value) || form.email.value == ""){
-		$("#email").attr('placeholder', "Vennligst bruk en gyldig email-adresse");
-	}
+		if(!validateEmail(form.email.value) || form.email.value == ""){
+			$("#email").attr('placeholder', "Vennligst bruk en gyldig email-adresse");
+			status = false;
+		}
 
-	
-	if(parseInt(form.width.value) || form.width.value === ""){
-		$("#width").attr('placeholder', 'Vennligst tast inn ønsket bredde på bordet.');
-	}
+		
+		if(parseInt(form.width.value) || form.width.value === ""){
+			$("#width").attr('placeholder', 'Vennligst tast inn ønsket bredde på bordet.');
+			status = false;
+		}
 
-	if(parseInt(form.length.value) < 0 || form.length.value === ""){
-		$("#length").attr('placeholder', 'Vennligst tast inn ønsket lengde på bordet.');
-	}
-	if(calculateSize(parseInt(form.width.value), parseInt(form.length.value)) > 0){
-	$("#beregnetStorrelse").html("Beregnet størrelse: " + calculateSize(parseInt(form.width.value), parseInt(form.length.value)) + " kvadratmeter.");
-	}
+		if(parseInt(form.length.value) < 0 || form.length.value === ""){
+			$("#length").attr('placeholder', 'Vennligst tast inn ønsket lengde på bordet.');
+			status = false;
+		}
+		if(calculateSize(parseInt(form.width.value), parseInt(form.length.value)) > 0){
+		$("#beregnetStorrelse").html("Beregnet størrelse: " + calculateSize(parseInt(form.width.value), parseInt(form.length.value)) + " kvadratmeter.");
+		status = false;
+		}
+	} else {
+		status = true;
+	}	
+
+	return status;
 };
 
 function resetForm(){
@@ -52,7 +67,7 @@ function validateEmail(email) {
 }; 
 
 function calculateSize(width, length){
-	var size = width * length;
+	var size = (width / 100) * (length / 100);
 
-	return size;
+	return size.toPrecision(3);
 }

@@ -316,12 +316,17 @@
                                         <option value="roldal" class="option form-controll">Røldal</option>
                                         <option value="mathopen" class="option form-controll">Mathopen</option>
                                       </select> 
-
-                                      <label for = "storrelse">Hvor stor plate ønsker du?</label>
-                                      <input type="text" class="form-control" id="width" name ="width" placeholder="Bredde i meter">
-                                      <input type="text" class="form-control" id="length" name ="length" placeholder="Lengde i meter">
-                                      <label for ="beregnetStorrelse" id="beregnetStorrelse"></label><br>
+                                      
+                                       <label for = "storrelse">Hvor stor plate ønsker du?</label>
                                  
+                                          <input type="text" class="form-control" id="width" name ="width" placeholder="Bredde i centimeter">
+                                        
+                                          <input type="text" class="form-control" id="length" name ="length" placeholder="Lengde i centimeter">
+                                          
+                                          <label for ="beregnetStorrelse" id="beregnetStorrelse"></label><br>
+                                          
+
+
                                       <label for="bordplate">Velg hvilken finish du ønsker på bordplaten</label>
                                       <select class="select form-control" name="finish" id="bordfinish">
                                         <option class="option form-control" value="teak">Teak</option>
@@ -344,6 +349,7 @@
                                       <div class="modal-footer">
                                       <button type="button" class="btn btn-default" data-dismiss="modal">Lukk</button>
                                       <button type="button" class="btn btn-primary" id="buy">Send bestilling</button>
+
                                 </form> 
                               </div>
                               </div><!-- /.modal-content -->
