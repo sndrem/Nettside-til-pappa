@@ -9,8 +9,10 @@ $(document).ready(function(){
 function validateForm(form){
 	//var form = document.kjopeForm;
 	var fullName = form.fullName.value;
+	console.log(fullName);
 	var adress = form.adress.value;
 	var number = form.phone.value;
+	console.log(number);
 	var width = parseInt(form.width.value,10);
 	var length = parseInt(form.length.value,10);
 	var email = form.email.value;
