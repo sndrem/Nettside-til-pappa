@@ -9,10 +9,8 @@ $(document).ready(function(){
 function validateForm(form){
 	//var form = document.kjopeForm;
 	var fullName = form.fullName.value;
-	console.log(fullName);
 	var adress = form.adress.value;
 	var number = form.phone.value;
-	console.log(number);
 	var width = parseInt(form.width.value,10);
 	var length = parseInt(form.length.value,10);
 	var email = form.email.value;
@@ -21,34 +19,40 @@ function validateForm(form){
 	if(!checkName(fullName)){
 		info = "Navnet er ikke skrevet inn,";
 		$("#fullName").attr('placeholder', "Vennligst skriv inn fullt navn.");
+		$("#fullName").val("");
 	}
 
 	if(!checkAdress(adress)){
 		info += " Heller ikke adressen,";
 		$("#adress").attr('placeholder', "Vennligst skriv inn en adresse");
+		$("#adress").val("");
 	}
 
 	if(!checkNumber(number)){
 		info += " Ikke nummeret heller,";
 		$("#phone").attr('placeholder', "Vennligst skriv inn 8 siffer");
+		$("#phone").val("");
 	}
 
 	if(!checkWidth(width)){
 		info += " bredden er feil,";
 		$("#width").attr('placeholder', "Vennligst skriv inn en gyldig bredde");
+		$("#width").val("");
 	}
 
 	if(!checkLength(length)){
 		info += " lengden er også feil,";
 		$("#length").attr('placeholder', "Vennligst fyll inn gyldig lengde");
+		$("#length").val("");
 	}
 
 	if(!validateEmail(email)){
 		info += " Taaaper, skriv inn riktig mail";
 		$("#email").attr('placeholder', "Vennligst bruk en gyldig mail");
+		$("#email").val("");
 	}
 
-	console.log(info);
+	//console.log(info);
 };
 
 
