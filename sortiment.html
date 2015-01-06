@@ -254,6 +254,7 @@
                     <!-- Include all compiled plugins (below), or include individual files as needed -->
                     <!-- Latest compiled and minified JavaScript -->
                     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+                    <script src="kappliste.js"></script>
                   </body>
                   <!-- Contact form modal -->
                   <div class="modal fade" id="contactModal">
@@ -296,41 +297,50 @@
                               </div>
                               <div class="modal-body">
                                 
-                                <p>Ønsker du å kjøpe et bord eller bare har spørsmål? Ikke nøl med å sende meg en mail.</p>
-                                <label for="name">Fullt navn</label>
-                                <input type="text" class="form-control" id="" placeholder="Fornavn Etternavn">
-                                <label for="adress">Adresse</label>
-                                <input type="text" class="form-control" id="" placeholder="Din adresse her">
-                                <label for="phone">Telefon</label>
-                                <input type="text" class="form-control" id="" placeholder="telefon">
-                                <label for="email">Email</label>
-                                <input type="text" class="form-control" id="" placeholder="example@hostname.no">
-                                <div class="choice">
+                                <form action="" name="kjopeForm">
+                                      <p>Ønsker du å kjøpe et bord eller bare har spørsmål? Ikke nøl med å sende oss en mail.</p>
+                                      <label for="name">Fullt navn</label>
+                                      <input type="text" class="form-control" id="" placeholder="Fornavn Etternavn">
+                                      <label for="adress">Adresse</label>
+                                      <input type="text" class="form-control" id="" placeholder="Din adresse her">
+                                      <label for="phone">Telefon</label>
+                                      <input type="text" class="form-control" id="" placeholder="telefon">
+                                      <label for="email">Email</label>
+                                      <input type="text" class="form-control" id="" placeholder="example@hostname.no">
+                                     
+                                      <label for = "modell">Hvilke modell ønsker du?</label>
+                                      <select name="model" id="model" class="select form-control">
+                                        <option value="hafjell" class="option form-controll">Hafjell</option>
+                                        <option value="valdres" class="option form-controll">Valdres</option>
+                                        <option value="Røldal" class="option form-controll">Røldal</option>
+                                        <option value="Mathopen" class="option form-controll">Mathopen</option>
+                                      </select> 
                                  
                                       <label for="bordplate">Velg hvilken finish du ønsker på bordplaten</label>
                                       <select class="select form-control" name="finish" id="bordfinish">
                                         <option class="option form-control" value="teak">Teak</option>
                                         <option class="option form-control" value="gran">Gran</option>
-                                        <option class="option form-control" value="value">Furu</option>
+                                        <option class="option form-control" value="furu">Furu</option>
                                         <option class="option form-control" value="masai">Masai</option>
-                                      </select> <br> 
+                                      </select>  
                                    
                                       <label for="bein">Velg hvilke bein du ønsker</label>
                                       <select class="select form-control" name="finish" id="bein">
                                       <option class="option form-control" value="rør">Rør</option>
                                       <option class="option form-control" value="tre">Tre</option>
-                                      </select> <br> 
+                                      </select>  
 
                                       <label for="leveringstid">Velg ønsket leveringstid.</label>
                                       <input type="date" class="form-control" name="leveringsdato">
                                    
-                                </div>  
-                                <label for="message">Melding</label>
-                                <textarea class="form-control" rows="5" id="comment" placeholder="Har du spørsmål eller kommentarer til leveransen? Send med en melding her."></textarea>
-                              </div>
-                              <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Lukk</button>
-                                <button type="button" class="btn btn-primary">Send bestilling</button>
+                                   
+                                      <label for="message">Melding</label>
+                                      <textarea class="form-control" rows="5" id="comment" placeholder="Har du spørsmål eller kommentarer til leveransen? Send med en melding her."></textarea>
+                                      </div>
+                                      <div class="modal-footer">
+                                      <button type="button" class="btn btn-default" data-dismiss="modal">Lukk</button>
+                                      <button type="button" class="btn btn-primary" id="buy" onclick="createCutlist()">Send bestilling</button>
+                                </form> 
                               </div>
                               </div><!-- /.modal-content -->
                               </div><!-- /.modal-dialog -->
