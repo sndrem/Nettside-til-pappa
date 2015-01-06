@@ -24,7 +24,7 @@ var mathopen = {
 
 $(document).ready(function(){
 	$("#buy").click(function(){
-		createCutlist();
+		//createCutlist();
 	});
 });
 
