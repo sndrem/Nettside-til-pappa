@@ -1,33 +1,25 @@
 var hafjell = {
 	name: "Hafjell",
 	legs: "4 stk",
-	typeOfLeg: "Tre",
-	tabletop: "5 x 2 meter",
-	defaultFinish: "Teak"
+	tabletop: "5 x 2 meter"
 };
 
 var valdres = {
 	name: "Valdres",
 	legs: "4 stk",
-	typeOfLeg: "Tre",
-	tabletop: "3 x 1,5 meter",
-	defaultFinish: "Gran"
+	tabletop: "3 x 1,5 meter"
 };
 
 var roldal = {
 	name: "Røldal",
 	legs: "4 stk",
-	typeOfLeg: "Tre",
-	tabletop: "4 x 5 meter",
-	defaultFinish: "Palmetre"
+	tabletop: "4 x 5 meter"
 };
 
 var mathopen = {
 	name: "Mathopen",
 	legs: "8 stk",
-	typeOfLeg: "Tre",
-	tabletop: "3 x 1,5 meter",
-	defaultFinish: "Mathopenskog"
+	tabletop: "3 x 1,5 meter"
 };
 
 $(document).ready(function(){

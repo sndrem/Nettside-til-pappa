@@ -254,6 +254,7 @@
                     <!-- Include all compiled plugins (below), or include individual files as needed -->
                     <!-- Latest compiled and minified JavaScript -->
                     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+                    <script src="formvalidation.js"></script>
                     <script src="kappliste.js"></script>
                   </body>
                   <!-- Contact form modal -->
@@ -297,16 +298,16 @@
                               </div>
                               <div class="modal-body">
                                 
-                                <form action="" name="kjopeForm">
+                                <form action="" id="kjopeForm" name="kjopeForm">
                                       <p>Ønsker du å kjøpe et bord eller bare har spørsmål? Ikke nøl med å sende oss en mail.</p>
                                       <label for="name">Fullt navn</label>
-                                      <input type="text" class="form-control" id="" placeholder="Fornavn Etternavn">
+                                      <input type="text" class="form-control" id="fullName" name="fullName" placeholder="Fornavn Etternavn">
                                       <label for="adress">Adresse</label>
-                                      <input type="text" class="form-control" id="" placeholder="Din adresse her">
+                                      <input type="text" class="form-control" id="adress" name="adress" placeholder="Din adresse her">
                                       <label for="phone">Telefon</label>
-                                      <input type="text" class="form-control" id="" placeholder="telefon">
+                                      <input type="text" class="form-control" id="phone" name="phone" placeholder="telefon">
                                       <label for="email">Email</label>
-                                      <input type="text" class="form-control" id="" placeholder="example@hostname.no">
+                                      <input type="text" class="form-control" id="email" name="email" placeholder="example@hostname.no">
                                      
                                       <label for = "modell">Hvilke modell ønsker du?</label>
                                       <select name="model" id="model" class="select form-control">
@@ -315,6 +316,10 @@
                                         <option value="roldal" class="option form-controll">Røldal</option>
                                         <option value="mathopen" class="option form-controll">Mathopen</option>
                                       </select> 
+
+                                      <label for = "storrelse">Hvor stor plate ønsker du?</label>
+                                      <input type="text" class="form-control" id="width" name ="width" placeholder="Bredde i meter">
+                                      <input type="text" class="form-control" id="length" name ="length" placeholder="Lengde i meter">
                                  
                                       <label for="bordplate">Velg hvilken finish du ønsker på bordplaten</label>
                                       <select class="select form-control" name="finish" id="bordfinish">
@@ -330,10 +335,7 @@
                                       <option class="option form-control" value="tre">Tre</option>
                                       <option class="option form-control" value="glass">Glass</option>
                                       </select>  
-
-                                      <label for="leveringstid">Velg ønsket leveringstid.</label>
-                                      <input type="date" class="form-control" name="leveringsdato">
-                                   
+                                  
                                    
                                       <label for="message">Melding</label>
                                       <textarea class="form-control" rows="5" id="comment" placeholder="Har du spørsmål eller kommentarer til leveransen? Send med en melding her."></textarea>
