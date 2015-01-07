@@ -10,7 +10,7 @@ $mail->SMTPDebug = 3;
 $mail->Host = 'smtp.gmail.com';
 $mail->Username = 'sndrem@gmail.com';
 $mail->Password = 'handball:11';
-$mail->SMTPSecure = 'tls';
+$mail->SMTPSecure = 'ssl';
 $mail->Port = 587;
 
 $mail->From = 'sndrem@gmail.com';
