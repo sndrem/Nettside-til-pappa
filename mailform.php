@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> FETCH_HEAD
 <?php 
 	
 	/* subject and Email variables */
@@ -56,4 +59,8 @@ EOD;
 EOD;
 
 echo "$theResult";
+<<<<<<< HEAD
 ?>
+=======
+?>
+>>>>>>> FETCH_HEAD
