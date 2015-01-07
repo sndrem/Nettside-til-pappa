@@ -96,10 +96,8 @@ function validateForm(form){
 		$("#emailError").addClass('has-success');
 	}
 
-<<<<<<< HEAD
-=======
 	console.log(status);
->>>>>>> FETCH_HEAD
+
 	return status;
 	//console.log(info);
 };

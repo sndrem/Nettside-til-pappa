@@ -11,7 +11,7 @@ $mail->Host = 'smtp.gmail.com';
 $mail->Username = 'sndrem@gmail.com';
 $mail->Password = 'handball:11';
 $mail->SMTPSecure = 'ssl';
-$mail->Port = 587;
+$mail->Port = 465;
 
 $mail->From = 'sndrem@gmail.com';
 $mail->FromName = 'Sindre Moldeklev';
