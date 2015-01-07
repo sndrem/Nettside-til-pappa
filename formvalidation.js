@@ -3,11 +3,17 @@ $(document).ready(function(){
 		validateForm(document.kjopeForm);
 	});
 
+	$("#reset").click(function(){
+		clearForm(document.kjopeForm);
+	})
+
+
+
 	
 });
 
 function validateForm(form){
-	//var form = document.kjopeForm;
+	
 	var fullName = form.fullName.value;
 	var adress = form.adress.value;
 	var number = form.phone.value;
@@ -16,42 +22,81 @@ function validateForm(form){
 	var email = form.email.value;
 	var info = "";
 
+	var status = true;
+
 	if(!checkName(fullName)){
 		info = "Navnet er ikke skrevet inn,";
 		$("#fullName").attr('placeholder', "Vennligst skriv inn fullt navn.");
 		$("#fullName").val("");
+		$("#fullNameError").addClass('has-error');
+		status = false;
+	} else {
+		$("#fullNameError").removeClass('has-error');
+		$("#fullNameError").addClass('has-success');
 	}
 
 	if(!checkAdress(adress)){
 		info += " Heller ikke adressen,";
 		$("#adress").attr('placeholder', "Vennligst skriv inn en adresse");
 		$("#adress").val("");
+		$("#adressError").addClass('has-error');
+		status = false;
+	} else {
+		$("#adressError").removeClass('has-error');
+		$("#adressError").addClass('has-success');
 	}
 
 	if(!checkNumber(number)){
 		info += " Ikke nummeret heller,";
 		$("#phone").attr('placeholder', "Vennligst skriv inn 8 siffer");
 		$("#phone").val("");
+		$("#phoneError").addClass('has-error');
+		status = false;
+	} else {
+		$("#phoneError").removeClass('has-error');
+		$("#phoneError").addClass('has-success');
 	}
 
 	if(!checkWidth(width)){
 		info += " bredden er feil,";
 		$("#width").attr('placeholder', "Vennligst skriv inn en gyldig bredde");
 		$("#width").val("");
+		$("#storrelseErrorBredde").addClass('has-error');
+		$("#beregnetStorrelse").html("");
+		status = false;
+	} else {
+		$("#storrelseErrorBredde").removeClass('has-error');
+		$("#storrelseErrorBredde").addClass('has-success');
 	}
 
 	if(!checkLength(length)){
 		info += " lengden er også feil,";
 		$("#length").attr('placeholder', "Vennligst fyll inn gyldig lengde");
 		$("#length").val("");
+		$("#storrelseErrorLengde").addClass('has-error');
+		$("#beregnetStorrelse").html("");
+		status = false;
+	} else {
+		$("#storrelseErrorLengde").removeClass('has-error');
+		$("#storrelseErrorLengde").addClass('has-success');
+	}
+
+	if(width && length){
+		$("#beregnetStorrelse").html("Beregnet størrelse er " + calculateSize(width, length) + " kvadrameter.");
 	}
 
 	if(!validateEmail(email)){
 		info += " Taaaper, skriv inn riktig mail";
 		$("#email").attr('placeholder', "Vennligst bruk en gyldig mail");
 		$("#email").val("");
+		$("#emailError").addClass('has-error');
+		status = false;
+	} else {
+		$("#emailError").removeClass('has-error');
+		$("#emailError").addClass('has-success');
 	}
 
+	return status;
 	//console.log(info);
 };
 
@@ -105,6 +150,16 @@ function checkLength(length){
 	} else {
 		return true;
 	}
+};
+
+function clearForm(form){
+	$("input").each(function(){
+		$( this ).val("");
+	});
+
+	$(".form-group").each(function(){
+		$( this ).removeClass('has-error has-success');
+	});
 };
 
 

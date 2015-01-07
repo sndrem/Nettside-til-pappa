@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Per-Atles bordfabrikk</title>
+    <?php
+    include_once "mailform.php";
+    ?>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
     <!-- Optional theme -->
@@ -232,7 +235,7 @@
                       </div> <!-- Slutt på main content -->
                       
                       <!-- Footer -->
-            <div class="navbar navbar-default navbar-static-bottom footer">
+            <div class="navbar navbar-default navbar-fixed-bottom footer">
               <div class="container">
                 <span class="navbar-text">
                 
@@ -298,16 +301,27 @@
                               </div>
                               <div class="modal-body">
                                 
-                                <form action="" id="kjopeForm" name="kjopeForm">
+                                <form id="kjopeForm" name="kjopeForm" onsubmit="return validateForm(this);" method="post" formenctype="multipart/form-data" action="correctMailform.php">
                                       <p>Ønsker du å kjøpe et bord eller bare har spørsmål? Ikke nøl med å sende oss en mail.</p>
+                                    <div class="form-group" id="fullNameError">
                                       <label for="name">Fullt navn</label>
                                       <input type="text" class="form-control" id="fullName" name="fullName" placeholder="Fornavn Etternavn">
+                                    </div>  
+                                    
+                                    <div class="form-group" id="adressError">
                                       <label for="adress">Adresse</label>
                                       <input type="text" class="form-control" id="adress" name="adress" placeholder="Din adresse her">
+                                    </div>
+
+                                    <div class="form-group" id="phoneError">
                                       <label for="phone">Telefon</label>
                                       <input type="text" class="form-control" id="phone" name="phone" placeholder="telefon">
+                                    </div>
+
+                                    <div class="form-group" id="emailError">
                                       <label for="email">Email</label>
                                       <input type="text" class="form-control" id="email" name="email" placeholder="example@hostname.no">
+                                    </div>
                                      
                                       <label for = "modell">Hvilke modell ønsker du?</label>
                                       <select name="model" id="model" class="select form-control">
@@ -317,13 +331,19 @@
                                         <option value="mathopen" class="option form-controll">Mathopen</option>
                                       </select> 
                                       
+                                      
                                        <label for = "storrelse">Hvor stor plate ønsker du?</label>
-                                 
+
+                                        <div class="form-group" id="storrelseErrorBredde">
                                           <input type="text" class="form-control" id="width" name ="width" placeholder="Bredde i centimeter">
-                                        
+                                        </div>
+
+                                        <div class="form-group" id="storrelseErrorLengde">
                                           <input type="text" class="form-control" id="length" name ="length" placeholder="Lengde i centimeter">
+                                        </div>
                                           
                                           <label for ="beregnetStorrelse" id="beregnetStorrelse"></label><br>
+                                      
                                           
 
                                       <label for="bordplate">Velg hvilken finish du ønsker på bordplaten</label>
@@ -335,7 +355,7 @@
                                       </select>  
                                    
                                       <label for="bein">Velg hvilke bein du ønsker</label>
-                                      <select class="select form-control" name="finish" id="bein">
+                                      <select class="select form-control" name="legs" id="bein">
                                       <option class="option form-control" value="rør">Rør</option>
                                       <option class="option form-control" value="tre">Tre</option>
                                       <option class="option form-control" value="glass">Glass</option>
@@ -343,11 +363,12 @@
                                   
                                    
                                       <label for="message">Melding</label>
-                                      <textarea class="form-control" rows="5" id="comment" placeholder="Har du spørsmål eller kommentarer til leveransen? Send med en melding her."></textarea>
+                                      <textarea class="form-control" name="comment" rows="5" id="comment" placeholder="Har du spørsmål eller kommentarer til leveransen? Send med en melding her."></textarea>
                                       </div>
                                       <div class="modal-footer">
                                       <button type="button" class="btn btn-default" data-dismiss="modal">Lukk</button>
-                                      <button type="button" class="btn btn-primary" id="buy">Send bestilling</button>
+                                      <button type="button" class="btn btn-default" id="reset">Reset</button>
+                                      <button class="btn btn-primary" id="buy" type="submit">Send bestilling</button>
 
                                 </form> 
                               </div>
