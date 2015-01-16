@@ -2,32 +2,33 @@
  
 require("PHPMailer/PHPMailerAutoload.php"); // path to the PHPMailer class
 
-$mail = new PHPmailer;
+$mail = new PHPMailer;
 
-$mail->isSMTP();
-$mail->SMTPAuth = true;
-$mail->SMTPDebug = 4;
-$mail->Mailer = 'smtp';
-$mail->SMTPSecure = 'ssl';
-$mail->Host = 'smtp.gmail.com';
-$mail->setFrom('sndrem@gmail.com', 'Sindre Moldeklev');
-$mail->Port = 465;
-$mail->Username = 'sndrem@gmail.com';
-$mail->Password = 'handball:11';
+//$mail->SMTPDebug = 3;                               // Enable verbose debug output
 
+$mail->isSMTP();                                      // Set mailer to use SMTP
+$mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
+$mail->SMTPAuth = true;                               // Enable SMTP authentication
+$mail->Username = 'sndrem@gmail.com';                 // SMTP username
+$mail->Password = 'handball:11';                           // SMTP password
+$mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+$mail->Port = 587;                                    // TCP port to connect to
 
-$mail->From = 'sndrem@gmail.com';
-$mail->FromName = 'Sindre Moldeklev';
-$mail->addReplyTo('sim@tv2.no', 'Reply adress');
-$mail->addAddress('sim@tv2.no', 'Sindre Moldeklev');
+$mail->From = 'from@example.com';
+$mail->FromName = 'Mailer';
+$mail->addAddress('joe@example.net', 'Joe User');     // Add a recipient
 
-$mail->Subject = 'Here is an email';
-$mail->Body = 'This is the body of the email';
-$mail->AltBody = 'This is the alternative body';
+$mail->isHTML(true);                                  // Set email format to HTML
 
-echo (extension_loaded('openssl')?'SSL loaded':'SSL not loaded')."\n"; 
+$mail->Subject = 'Here is the subject';
+$mail->Body    = 'This is the HTML message body <b>in bold!</b>';
+$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
-var_dump($mail->send());
-
+if(!$mail->send()) {
+    echo 'Message could not be sent.';
+    echo 'Mailer Error: ' . $mail->ErrorInfo;
+} else {
+    echo 'Message has been sent';
+}
 
 ?>
